@@ -1,0 +1,60 @@
+============================================================================
+                   ACPI DSDT Table for ad5593r driver
+
+                          Installation Guide
+============================================================================
+
+Pre-requirement: Have administrator permission
+$ sudo su
+
+
+Build ACPI table
+============================================================================
+1. Install acpi tools
+   $ sudo apt-get install acpica-tools
+
+2. Modify content of "DSDT.dsl"
+
+3. Generate DSDT.aml (binary)
+   $ iasl -tc DSDT.dsl
+   if there is something errer, fix it and build again
+
+4. Copy DSDT.aml to the path kernel/firmware/acpi/
+   $ cp DSDT.aml kernel/firmware/acpi/DSDT.aml
+
+5. Generate cpio file
+   $ find kernel | cpio -H newc --create > adv_gpio_dsdt.cpio
+
+
+Install step:
+============================================================================
+
+1. Copy ACPI table to /boot
+   $ cp adv_gpio_dsdt.cpio /boot
+
+2. Edit default grub setting
+   $ vim /etc/grub.d/10_linux
+
+3. Modify initrd
+
+  if test -n "${initrd}" && [ x"$GRUB_DISABLE_INITRD" != xtrue ]; then
+    # TRANSLATORS: ramdisk isn't identifier. Should be translated.
+#    if [ x"$quiet_boot" = x0 ] || [ x"$type" != xsimple ]; then
+    if [ x"$quiet_boot" = x0 ]; then
+      message="$(gettext_printf "Loading initial ramdisk ...")"
+      sed "s/^/$submenu_indentation/" << EOF
+        echo    '$(echo "$message" | grub_quote)'
+EOF
+    fi
+    sed "s/^/$submenu_indentation/" << EOF
+        initrd  ${rel_dirname}/${initrd}    
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+        // modify this line to -->
+        initrd  /boot/adv_gpio_dsdt.cpio ${rel_dirname}/${initrd}
+EOF
+
+
+4. Update grub
+   $ grub-mkconfig -o /boot/grub/grub.cfg 
+
+5. Reboot

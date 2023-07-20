@@ -1,0 +1,19 @@
+[Unit]
+Description=AD5593R SERVICE
+DefaultDependencies=false
+Requires=systemd-modules-load.service
+After=systemd-modules.load.service dbus.service
+##After=systemd-modules.load.service network.service dbus.service display-manager.service
+#Before=sysvinit.target
+ConditionPathExists=/sys/class/i2c-adapter
+
+[Service]
+Type=oneshot
+#ExecStart=modprobe ad5593r
+ExecStart=/usr/src/advantech/advad5593r/ad5593r.sh
+#Restart=always
+Restart=no
+
+[Install]
+WantedBy=sysinit.target
+

@@ -1,0 +1,574 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<comps>
+  <category>      
+    <id>Base-system</id>
+    <name>base-system mode installation</name>
+    <displayOrder>1</displayOrder>
+    <description>Select this installation type to install a text environment without X system in Advantech devices.</description>
+    <localPackageList>
+      <localPackage>qt-fb</localPackage>
+    </localPackageList>
+  </category>
+
+  <category>
+    <id>Desktop-system</id>
+    <name>Desktop-system mode installation</name>
+    <displayOrder>2</displayOrder>
+    <description>This option installs a Desktop environment with xorg X server and system anministration in Advantech devices.</description>
+    <localPackageList>
+      <localPackage>qt-x11</localPackage>
+      <localPackage>qt-creator</localPackage>
+    </localPackageList>
+  </category>
+
+  <group>
+    <id>TPC-8100TR</id>
+    <description>Drivers installed on TPC-8100TR.</description>
+    <packageList>
+      <packageReq>adspname</packageReq>
+      <packageReq>advec</packageReq>
+      <packageReq>penmount</packageReq>
+    </packageList>
+    <settingList>
+      <grubReq>intel_idle.max_cstate=1;net.ifnames=0</grubReq>
+      <keyboardReq>true</keyboardReq>
+    </settingList>
+  </group>
+  
+  <group>
+    <id>TPC-1051WP</id>
+    <description>Drivers installed on TPC-1051WP.</description>
+    <packageList>
+      <packageReq>adspname</packageReq>
+      <packageReq>advec</packageReq>
+      <packageReq>penmount</packageReq>
+    </packageList>
+    <settingList>
+      <grubReq>intel_idle.max_cstate=1;net.ifnames=0</grubReq>
+      <keyboardReq>true</keyboardReq>
+    </settingList>
+  </group>
+
+  <group>
+    <id>TPC-1551WP</id>
+    <description>Drivers installed on TPC-1551WP.</description>
+    <packageList>
+      <packageReq>adspname</packageReq>
+      <packageReq>advec</packageReq>
+      <packageReq>penmount</packageReq>
+    </packageList>
+    <settingList>
+      <grubReq>intel_idle.max_cstate=1;net.ifnames=0</grubReq>
+      <keyboardReq>true</keyboardReq>
+    </settingList>
+  </group>
+
+  <group>
+    <id>TPC-651T</id>
+    <description>Drivers installed on TPC-651T.</description>
+    <packageList>
+      <packageReq>adspname</packageReq>
+      <packageReq>advec</packageReq>
+      <packageReq>penmount</packageReq>
+    </packageList>
+    <settingList>
+      <grubReq>intel_idle.max_cstate=1;net.ifnames=0</grubReq>
+      <keyboardReq>false</keyboardReq>
+    </settingList>
+  </group>
+
+  <group>
+    <id>TPC-1251T</id>
+    <description>Drivers installed on TPC-1251T.</description>
+    <packageList>
+      <packageReq>adspname</packageReq>
+      <packageReq>advec</packageReq>
+      <packageReq>penmount</packageReq>
+    </packageList>
+    <settingList>
+      <grubReq>intel_idle.max_cstate=1;net.ifnames=0</grubReq>
+      <keyboardReq>false</keyboardReq>
+    </settingList>
+  </group>
+
+  <group>
+    <id>TPC-1551T</id>
+    <description>Drivers installed on TPC-1551T.</description>
+    <packageList>
+      <packageReq>adspname</packageReq>
+      <packageReq>advec</packageReq>
+      <packageReq>penmount</packageReq>
+    </packageList>
+    <settingList>
+      <grubReq>intel_idle.max_cstate=1;net.ifnames=0</grubReq>
+      <keyboardReq>false</keyboardReq>
+    </settingList>
+  </group>
+
+  <group>
+    <id>TPC-1751T</id>
+    <description>Drivers installed on TPC-1751T.</description>
+    <packageList>
+      <packageReq>adspname</packageReq>
+      <packageReq>advec</packageReq>
+      <packageReq>penmount</packageReq>
+    </packageList>
+    <settingList>
+      <grubReq>intel_idle.max_cstate=1;net.ifnames=0</grubReq>
+      <keyboardReq>false</keyboardReq>
+    </settingList>
+  </group>
+
+  <group>
+    <id>TPC-1782H</id>
+    <description>Drivers installed on TPC-1782H.</description>
+    <packageList>
+      <packageReq>adspname</packageReq>
+      <packageReq>advec</packageReq>
+      <packageReq>penmount</packageReq>
+    </packageList>
+    <settingList>
+      <grubReq>intel_idle.max_cstate=1;net.ifnames=0</grubReq>
+      <keyboardReq>true</keyboardReq>
+    </settingList>
+  </group>
+
+  <group>
+    <id>TPC-B500</id>
+    <description>Drivers installed on TPC-B500.</description>
+    <packageList>
+      <packageReq>adspname</packageReq>
+      <packageReq>advec</packageReq>
+      <packageReq>penmount</packageReq>
+    </packageList>
+    <settingList>
+      <grubReq>intel_idle.max_cstate=1;net.ifnames=0</grubReq>
+      <keyboardReq>true</keyboardReq>
+    </settingList>
+  </group>
+
+  <group>
+    <id>TPC-5122T</id>
+    <description>Drivers installed on TPC-5122T.</description>
+    <packageList>
+      <packageReq>adspname</packageReq>
+      <packageReq>advec</packageReq>
+      <packageReq>penmount</packageReq>
+    </packageList>
+    <settingList>
+      <grubReq>intel_idle.max_cstate=1;net.ifnames=0</grubReq>
+      <keyboardReq>true</keyboardReq>
+    </settingList>
+  </group>
+  
+    <group>
+    <id>TPC-5152T</id>
+    <description>Drivers installed on TPC-5152T.</description>
+    <packageList>
+      <packageReq>adspname</packageReq>
+      <packageReq>advec</packageReq>
+      <packageReq>eGTouch</packageReq>
+    </packageList>
+    <settingList>
+      <grubReq>intel_idle.max_cstate=1;net.ifnames=0</grubReq>
+      <keyboardReq>true</keyboardReq>
+    </settingList>
+  </group>
+  
+    <group>
+    <id>TPC-5172T</id>
+    <description>Drivers installed on TPC-5172T.</description>
+    <packageList>
+      <packageReq>adspname</packageReq>
+      <packageReq>advec</packageReq>
+      <packageReq>eGTouch</packageReq>
+    </packageList>
+    <settingList>
+      <grubReq>intel_idle.max_cstate=1;net.ifnames=0</grubReq>
+      <keyboardReq>true</keyboardReq>
+    </settingList>
+  </group>
+  
+    <group>
+    <id>TPC-5182T</id>
+    <description>Drivers installed on TPC-5182T.</description>
+    <packageList>
+      <packageReq>adspname</packageReq>
+      <packageReq>advec</packageReq>
+      <packageReq>penmount</packageReq>
+    </packageList>
+    <settingList>
+      <grubReq>intel_idle.max_cstate=1;net.ifnames=0</grubReq>
+      <keyboardReq>true</keyboardReq>
+    </settingList>
+  </group>
+  
+    <group>
+    <id>TPC-5212T</id>
+    <description>Drivers installed on TPC-5212T.</description>
+    <packageList>
+      <packageReq>adspname</packageReq>
+      <packageReq>advec</packageReq>
+      <packageReq>eGTouch</packageReq>
+    </packageList>
+    <settingList>
+      <grubReq>intel_idle.max_cstate=1;net.ifnames=0</grubReq>
+      <keyboardReq>true</keyboardReq>
+    </settingList>
+  </group>
+  
+    <group>
+    <id>TPC-5122W</id>
+    <description>Drivers installed on TPC-5122W.</description>
+    <packageList>
+      <packageReq>adspname</packageReq>
+      <packageReq>advec</packageReq>
+      <packageReq>penmount</packageReq>
+    </packageList>
+    <settingList>
+      <grubReq>intel_idle.max_cstate=1;net.ifnames=0</grubReq>
+      <keyboardReq>true</keyboardReq>
+    </settingList>
+  </group>
+  
+    <group>
+    <id>TPC-5152W</id>
+    <description>Drivers installed on TPC-5152W.</description>
+    <packageList>
+      <packageReq>adspname</packageReq>
+      <packageReq>advec</packageReq>
+      <packageReq>eGTouch</packageReq>
+    </packageList>
+    <settingList>
+      <grubReq>intel_idle.max_cstate=1;net.ifnames=0</grubReq>
+      <keyboardReq>true</keyboardReq>
+    </settingList>
+  </group>
+  
+    <group>
+    <id>TPC-5172W</id>
+    <description>Drivers installed on TPC-5172W.</description>
+    <packageList>
+      <packageReq>adspname</packageReq>
+      <packageReq>advec</packageReq>
+      <packageReq>eGTouch</packageReq>
+    </packageList>
+    <settingList>
+      <grubReq>intel_idle.max_cstate=1;net.ifnames=0</grubReq>
+      <keyboardReq>true</keyboardReq>
+    </settingList>
+  </group>
+  
+    <group>
+    <id>TPC-5182W</id>
+    <description>Drivers installed on TPC-5182W.</description>
+    <packageList>
+      <packageReq>adspname</packageReq>
+      <packageReq>advec</packageReq>
+      <packageReq>penmount</packageReq>
+    </packageList>
+    <settingList>
+      <grubReq>intel_idle.max_cstate=1;net.ifnames=0</grubReq>
+      <keyboardReq>true</keyboardReq>
+    </settingList>
+  </group>
+  
+    <group>
+    <id>TPC-5212W</id>
+    <description>Drivers installed on TPC-5212W.</description>
+    <packageList>
+      <packageReq>adspname</packageReq>
+      <packageReq>advec</packageReq>
+      <packageReq>eGTouch</packageReq>
+    </packageList>
+    <settingList>
+      <grubReq>intel_idle.max_cstate=1;net.ifnames=0</grubReq>
+      <keyboardReq>true</keyboardReq>
+    </settingList>
+  </group>
+  
+    <group>
+    <id>TPC-5121T</id>
+    <description>Drivers installed on TPC-5121T.</description>
+    <packageList>
+      <packageReq>adspname</packageReq>
+      <packageReq>advec</packageReq>
+      <packageReq>penmount</packageReq>
+    </packageList>
+    <settingList>
+      <grubReq>intel_idle.max_cstate=1;net.ifnames=0</grubReq>
+      <keyboardReq>true</keyboardReq>
+    </settingList>
+  </group>
+  
+    <group>
+    <id>TPC-5151T</id>
+    <description>Drivers installed on TPC-5151T.</description>
+    <packageList>
+      <packageReq>adspname</packageReq>
+      <packageReq>advec</packageReq>
+      <packageReq>eGTouch</packageReq>
+    </packageList>
+    <settingList>
+      <grubReq>intel_idle.max_cstate=1;net.ifnames=0</grubReq>
+      <keyboardReq>true</keyboardReq>
+    </settingList>
+  </group>
+  
+    <group>
+    <id>TPC-5171T</id>
+    <description>Drivers installed on TPC-5171T.</description>
+    <packageList>
+      <packageReq>adspname</packageReq>
+      <packageReq>advec</packageReq>
+      <packageReq>eGTouch</packageReq>
+    </packageList>
+    <settingList>
+      <grubReq>intel_idle.max_cstate=1;net.ifnames=0</grubReq>
+      <keyboardReq>true</keyboardReq>
+    </settingList>
+  </group>
+  
+    <group>
+    <id>TPC-5181T</id>
+    <description>Drivers installed on TPC-5181T.</description>
+    <packageList>
+      <packageReq>adspname</packageReq>
+      <packageReq>advec</packageReq>
+      <packageReq>penmount</packageReq>
+    </packageList>
+    <settingList>
+      <grubReq>intel_idle.max_cstate=1;net.ifnames=0</grubReq>
+      <keyboardReq>true</keyboardReq>
+    </settingList>
+  </group>
+  
+    <group>
+    <id>TPC-5211T</id>
+    <description>Drivers installed on TPC-5211T.</description>
+    <packageList>
+      <packageReq>adspname</packageReq>
+      <packageReq>advec</packageReq>
+      <packageReq>eGTouch</packageReq>
+    </packageList>
+    <settingList>
+      <grubReq>intel_idle.max_cstate=1;net.ifnames=0</grubReq>
+      <keyboardReq>true</keyboardReq>
+    </settingList>
+  </group>
+  
+    <group>
+    <id>TPC-5121W</id>
+    <description>Drivers installed on TPC-5151W.</description>
+    <packageList>
+      <packageReq>adspname</packageReq>
+      <packageReq>advec</packageReq>
+      <packageReq>penmount</packageReq>
+    </packageList>
+    <settingList>
+      <grubReq>intel_idle.max_cstate=1;net.ifnames=0</grubReq>
+      <keyboardReq>true</keyboardReq>
+    </settingList>
+  </group>
+  
+    <group>
+    <id>TPC-5151W</id>
+    <description>Drivers installed on TPC-5151W.</description>
+    <packageList>
+      <packageReq>adspname</packageReq>
+      <packageReq>advec</packageReq>
+      <packageReq>eGTouch</packageReq>
+    </packageList>
+    <settingList>
+      <grubReq>intel_idle.max_cstate=1;net.ifnames=0</grubReq>
+      <keyboardReq>true</keyboardReq>
+    </settingList>
+  </group>
+  
+    <group>
+    <id>TPC-5171W</id>
+    <description>Drivers installed on TPC-5171W.</description>
+    <packageList>
+      <packageReq>adspname</packageReq>
+      <packageReq>advec</packageReq>
+      <packageReq>eGTouch</packageReq>
+    </packageList>
+    <settingList>
+      <grubReq>intel_idle.max_cstate=1;net.ifnames=0</grubReq>
+      <keyboardReq>true</keyboardReq>
+    </settingList>
+  </group>
+  
+    <group>
+    <id>TPC-5181W</id>
+    <description>Drivers installed on TPC-5181W.</description>
+    <packageList>
+      <packageReq>adspname</packageReq>
+      <packageReq>advec</packageReq>
+      <packageReq>penmount</packageReq>
+    </packageList>
+    <settingList>
+      <grubReq>intel_idle.max_cstate=1;net.ifnames=0</grubReq>
+      <keyboardReq>true</keyboardReq>
+    </settingList>
+  </group>
+  
+    <group>
+    <id>TPC-5211W</id>
+    <description>Drivers installed on TPC-5211W.</description>
+    <packageList>
+      <packageReq>adspname</packageReq>
+      <packageReq>advec</packageReq>
+      <packageReq>eGTouch</packageReq>
+    </packageList>
+    <settingList>
+      <grubReq>intel_idle.max_cstate=1;net.ifnames=0</grubReq>
+      <keyboardReq>true</keyboardReq>
+    </settingList>
+  </group>
+
+  <group>
+    <id>UNO-1372G</id>
+    <description>Drivers installed on UNO-1372G.</description>
+    <packageList>
+      <packageReq>adspname</packageReq>
+      <packageReq>advec</packageReq>
+    </packageList>
+    <settingList>
+      <grubReq>intel_idle.max_cstate=1;net.ifnames=0</grubReq>
+      <keyboardReq>false</keyboardReq>
+    </settingList>
+  </group>
+
+  <group>
+    <id>UNO-2271G</id>
+    <description>Drivers installed on UNO-2271G.</description>
+    <packageList>
+      <packageReq>adspname</packageReq>
+      <packageReq>advec</packageReq>
+    </packageList>
+    <settingList>
+      <grubReq>intel_idle.max_cstate=1;net.ifnames=0</grubReq>
+      <keyboardReq>false</keyboardReq>
+    </settingList>
+  </group>
+
+  <group>
+    <id>UNO-2272G</id>
+    <description>Drivers installed on UNO-2272G.</description>
+    <packageList>
+      <packageReq>adspname</packageReq>
+      <packageReq>advwdt_sch311x</packageReq>
+    </packageList>
+    <settingList>
+      <grubReq>intel_idle.max_cstate=1;net.ifnames=0</grubReq>
+      <keyboardReq>false</keyboardReq>
+    </settingList>
+  </group>
+
+  <group>
+    <id>UNO-2483G</id>
+    <description>Drivers installed on UNO-2483G.</description>
+    <packageList>
+      <packageReq>adspname</packageReq>
+      <packageReq>advec</packageReq>
+    </packageList>
+    <settingList>
+      <grubReq>intel_idle.max_cstate=1;net.ifnames=0</grubReq>
+      <keyboardReq>false</keyboardReq>
+    </settingList>
+  </group>
+
+  <group>
+    <id>PPC-31x0S</id>
+    <description>Drivers installed on PPC-31x0S.</description>
+    <packageList>
+      <packageReq>adspname</packageReq>
+      <packageReq>advwdt_nct5523</packageReq>
+      <packageReq>penmount</packageReq>
+    </packageList>
+    <settingList>
+      <grubReq>intel_idle.max_cstate=1;net.ifnames=0</grubReq>
+      <keyboardReq>false</keyboardReq>
+    </settingList>
+  </group>
+
+  <group>
+    <id>APAX-5580</id>
+    <description>Drivers installed on APAX-5580.</description>
+    <packageList>
+      <packageReq>adspname</packageReq>
+      <packageReq>advec</packageReq>
+    </packageList>
+    <settingList>
+      <grubReq>intel_idle.max_cstate=1;net.ifnames=0</grubReq>
+      <keyboardReq>false</keyboardReq>
+    </settingList>
+  </group>
+
+  <group>
+    <id>ADAM-5560</id>
+    <description>Drivers installed on ADAM-5560.</description>
+    <packageList>
+      <packageReq>adspname</packageReq>
+      <packageReq>advwdt_sch311x</packageReq>
+    </packageList>
+    <settingList>
+      <grubReq>intel_idle.max_cstate=1;net.ifnames=0</grubReq>
+      <keyboardReq>false</keyboardReq>
+    </settingList>
+  </group>
+
+  <group>
+    <id>UNO-2473G</id>
+    <description>Drivers installed on UNO-2473G.</description>
+    <packageList>
+      <packageReq>adspname</packageReq>
+      <packageReq>advec</packageReq>
+    </packageList>
+    <settingList>
+      <grubReq>intel_idle.max_cstate=1;net.ifnames=0</grubReq>
+      <keyboardReq>false</keyboardReq>
+    </settingList>
+  </group>
+
+  <group>
+    <id>UNO-2484G</id>
+    <description>Drivers installed on UNO-2484G.</description>
+    <packageList>
+      <packageReq>adspname</packageReq>
+      <packageReq>advec</packageReq>
+    </packageList>
+    <settingList>
+      <grubReq>intel_idle.max_cstate=1;net.ifnames=0</grubReq>
+      <keyboardReq>false</keyboardReq>
+    </settingList>
+  </group>
+
+  <group>
+    <id>UNO-3283G/3285G</id>
+    <description>Drivers installed on UNO-3283G/3285G.</description>
+    <packageList>
+      <packageReq>adspname</packageReq>
+      <packageReq>advec</packageReq>
+    </packageList>
+    <settingList>
+      <grubReq>intel_idle.max_cstate=1;net.ifnames=0</grubReq>
+      <keyboardReq>false</keyboardReq>
+    </settingList>
+  </group>
+
+  <group>
+    <id>UNO-2372G</id>
+    <description>Drivers installed on UNO-2372G.</description>
+    <packageList>
+      <packageReq>adspname</packageReq>
+      <packageReq>advec</packageReq>
+    </packageList>
+    <settingList>
+      <grubReq>intel_idle.max_cstate=1;net.ifnames=0</grubReq>
+      <keyboardReq>false</keyboardReq>
+    </settingList>
+  </group>
+
+</comps>

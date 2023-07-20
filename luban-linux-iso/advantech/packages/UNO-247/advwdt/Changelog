@@ -1,0 +1,71 @@
+ChangeLog of advwdt Linux Driver
+
+1. Change Logs
+
+   Version 1.10  <01/12/2005>         
+              - Initial version, support 2.4/2.6 kernel
+   Version 1.12  <04/19/2005>
+	      - Support Debian 3.0r2, SuSE9.2, Mandrake10.1,FC2.	
+   Version 1.13 <03/21/2006>
+	      - Support WinBond 83627HF. Support FC3,FC4,Debian 3.1r0a,
+	        Mandriva 2006.
+   Version 1.14 <07/10/2006>
+              - Support FC5.
+   Version 1.15 <12/25/2006>
+	      - Renew the 83627HF driver to support UNO-2053E.
+   Version 1.16 <07/06/2009>
+	      - support FC6, FC7, FC8, FC9, debian4.0,opensuse 10.3
+              - support F75111R watchdog device support.
+              - remove 443,977 watchdog device support.
+   Version 1.17 <05/06/2010> 
+		Driver verison:
+		advwdt627:v1.12, advwdt7511:v1.12, advwdt311x:v1.01
+      	      - support FC10,FC11,FC12,SUSE 11.2 Madriva 2010
+	      - support UNO-2173 and TPC-1770 with advwdt311x watchdog driver
+   Version 1.18 <03/26/2011> 
+		Driver verison:
+		advwdt627:v1.13, advwdt7511:v1.13, advwdt311x:v1.02
+	      - advwdt311x: add support for UNO-2174,UNO-2178
+	      - advwdt7511: fix bug in ubuntu OS
+      	      - support FC13,FC14,SUSE 11.3 ubuntu 10.04,ubuntu 10.10
+	      - support UNO-2174 and UNO-2178 with advwdt311x watchdog driver
+   Version 1.19 <09/26/2011> 
+		Driver verison:
+	        advwdt627:v1.14, advwdt7511:v1.14, advwdt311x:v1.03,advwdt_multi:v1.00
+	      - advwdt311x: add support for UNO-1170AE,TPC-671 
+	      - advwdt627: TPC-1550(new version 83627 chip)
+	      - advwdt_multi:new watchdog driver for UNO-1172A
+              - support new kernel >= 2.6.36
+   Version 1.20 <02/09/2012> 
+		Driver verison:
+	        advwdt627:v1.14, advwdt7511:v1.14, advwdt311x:v1.04,advwdt_multi:v1.00
+	      - advwdt311x:Read Config Registers to identify port address is 0x2E or 0x4E
+	      		advwdt311x support 2.4 version kernel.
+              - support 3.x kernel 
+   Version 1.21 <03/04/2012> 
+		Driver verison:
+	        advwdt627:v1.14, advwdt7511:v1.14, advwdt311x:v1.04,advwdt_multi:v1.00,advwdt6776:v1.00
+	      - add advwdt6776 watchdog support.
+   Version 1.22 <02/06/2015> 
+		Driver verison:
+	        advwdt627:v1.14, advwdt7511:v1.14, advwdt311x:v1.04,advwdt_multi:v1.00,advwdt6776:v1.01
+   Version 1.23 <12/03/2015> 
+		Driver verison:
+	        advwdt627:v1.14, advwdt7511:v1.14, advwdt311x:v1.04,advwdt_multi:v1.00,advwdt6776:v1.02
+	      - advwdt6776: add support for PPC-1150,PPC-8150,PPC-8170.
+   Version 1.24 <02/02/2016> 
+		Driver verison:
+	        advwdt627:v1.14, advwdt7511:v1.14, advwdt311x:v1.04,advwdt_multi:v1.00,advwdt6776:v1.02,advwdt5523:v1.00
+	      - advwdt5523: add support for PPC-3100S.
+   Version 1.25 <08/03/2016> 
+		Driver verison:
+	        advwdt627:v1.15, advwdt7511:v1.14, advwdt311x:v1.05,advwdt_multi:v1.00,advwdt6776:v1.02,advwdt5523:v1.00
+	      - advwdt627: add support for ECU-4784.
+	      - advwdt311x: add support for UNO-2272G.
+   Version 1.26 <04/26/2020> 
+		Driver verison:
+	        advwdt627:v1.15, advwdt7511:v1.14,advwdt311x:v1.05,
+		advwdt_multi:v1.00,advwdt6116d:v1.03,advwdt6776:v1.02,advwdt5523:v1.00
+	      - advwdt627: add support for ECU-4784.
+	      - advwdt311x: add support for UNO-2272G		
+	      - advwdt6116d: add support for UNO-247, PPC-3100-RE9A, PPC-3120-RE9A		

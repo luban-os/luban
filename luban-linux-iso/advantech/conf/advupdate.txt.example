@@ -1,0 +1,11 @@
+#advimage=y will update uboot and kernel
+#advrootfs=y will recovery linux file system
+#advrecover=y will copy files to recovery partition
+#advfactory=y will restore factory deafault setting
+#advpath=/home/sysuser will setup TagLink application install path
+advimage=n
+advrootfs=n
+advrecover=n
+advfactory=y
+advapp=n
+advpath=/home/sysuser

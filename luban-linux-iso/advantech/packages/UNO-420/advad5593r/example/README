@@ -1,0 +1,87 @@
+============================================================================
+           Advantech AD5593R driver
+             Installation Guide
+            For Linux Kernel 4.10
+        Copyright (C) 2019, Advantech Co., Ltd.
+============================================================================
+
+Example and usage
+
+============================================================================
+1. This example is for ad5593r iio device. 
+   To install iio tools, run
+    # sudo apt-get install libiio*
+
+    For more information see also here:
+    https://wiki.analog.com/resources/tools-software/linux-drivers/iio-dac/ad5593r?rev=1512479501#ad5593r_iio_dacadc_linux_driver 
+    http://analogdevicesinc.github.io/libiio/ 
+
+============================================================================
+2. To build the examples, run
+	# make	
+
+============================================================================
+3. AD5593R test for IIO sysfs interface
+	The ad5593r driver and iio tools should be installed.
+    
+    3.1 Show device name
+    # cd /sys/bus/iio/devices/iio\:device0
+    # cat name
+
+    3.2 Scales
+    The output range of the DAC is 0 V to VREF or 0 V to 2 × VREF.
+    out_voltage_scale is used to select the high or low range. Without external
+    reference the driver selects the internal 2500mV VREF reference. So the
+    scale computes as 2500mV/2^12 = 0.610351562 or 5000mV/2^12 = 1.220703124.
+
+    The input range of the ADC is 0 V to VREF or 0 V to 2 × VREF.
+    in_voltage_scale is used to select the high or low range. Without external
+    reference the driver selects the internal 2500mV VREF reference. So the
+    scale computes as 2500mV/2^12 = 0.610351562 or 5000mV/2^12 = 1.220703124.
+
+        3.2.1 Show current scale
+        Scale to be applied to out_voltageY_raw/in_voltageY_raw in order to
+        obtain the measured voltage in millivolts.
+        # cat out_voltage_scale
+
+        3.2.2 Show available scales
+        Scale to be applied to out_voltageY_raw/in_voltageY_raw in order to 
+        obtain the measured voltage in millivolts.
+        # cat in_voltage_scale_available
+
+        3.2.3 Change scales
+        Scale to be applied to out_voltageY_raw/in_voltageY_raw in order to
+		obtain the measured voltage in millivolts.
+        # echo 1.220703124 > in_voltage_scale
+        # cat in_voltage_scale
+
+    3.3 Get channel Y input voltage
+    Raw (unscaled, no bias etc.) output voltage for channel Y.
+    U = out_voltage0_raw * out_voltage_scale = 1638 * 0.610351562 = 999.76 mV
+    # echo 1638 > out_voltage0_raw
+
+    3.4 Example obtaining the temperature in °C
+    T = ( in_temp_raw + in_temp_offset ) * in_temp_scale
+    T = ( 810 - 753 ) * 376.78975 = 21477 mdeg C = 21.5 °C
+
+    3.5 GPIO Testing
+    The GPIO sysfs interface allows users to manipulate any GPIO from userspace.
+    Userspace utilizes a sysfs control interface to dynamically request and
+    release individual GPIOs. Once a GPIO has been requested, writing to the
+    newly created path allows you to control the direction and the data while
+    reading from it returns the GPIO data (which usually corresponds to a 0 or 1
+    which represents the signal level).
+    # cd /sys/class/gpio/
+    # echo 504 > export
+    # cd gpio509/
+    # cat direction
+    # cat value
+    # echo low > direction 
+    # cat direction
+    # cat value
+    # echo high > direction                                                                                                                                    
+    # cat value
+
+
+
+

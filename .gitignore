@@ -1,0 +1,5 @@
+*.iso
+luban-linux-iso/isolinux/isolinux.bin
+luban-linux-iso/casper/filesystem.squashfs
+luban-linux-iso/advantech/images/advlinux-*.img
+

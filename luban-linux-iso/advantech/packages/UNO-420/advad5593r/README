@@ -1,0 +1,129 @@
+============================================================================
+           Advantech AD5593R driver
+             Installation Guide
+            For Linux Kernel 4.10
+        Copyright (C) 2019, Advantech Co., Ltd.
+============================================================================
+Contents
+
+1. Introduction
+2. Device support list
+3. Files
+4. Installation
+
+-----------------------------------------------------------------------------
+!!!Before Install AD5593R driver, please set up ACPI table first.
+-----------------------------------------------------------------------------
+1. Introduction
+   
+   Advantech AD5593R x86 Linux driver, 
+   supports UNO platform.
+    
+   This driver supports Linux Intel x86 hardware platform. 
+   Any problem occurs, please contact us at support@advantech.com.tw.
+
+   About IIO devices, please get more information from the following websites:
+   https://wiki.analog.com/resources/tools-software/linux-drivers/iio-dac/ad5593r?rev=1512479501#ad5593r_iio_dacadc_linux_driver
+
+-----------------------------------------------------------------------------
+2. Device support list
+
+   Information and reference:
+   AD5593R: 
+	  UNO-420
+
+----------------------------------------------------------------------------
+3. Files
+   The directory construction is:
+
+      +advad5593r_source_v1.02
+      |
+      +--drivers                    // directory of the device driver
+      |       |
+      |       +--ad5592r-base		// ad5592r driver, core functions for ad5593r driver
+      |       |
+      |       +--ad5593r	        // ad5593r driver, depends on I2C & SMBUS & ad5592r-base driver
+      |       |
+      |       +--Makefile           // Makefile for install the driver
+      |
+      +--example                    // directory of the demo example
+      |       |
+      |       +--Makefile           // Makefile for building the examples
+      |       |
+      |       +--test_iio_ad5593r.c // example for ad5593r iio port
+      |       |
+      |       +--REAME              // README file for build and how to use the examples
+      |
+      +--README                     // README file for driver installation
+      |
+      +--changelog.txt              // changelog file for driver installation
+
+-----------------------------------------------------------------------------
+4. Installation
+   4.0 Login as root
+   
+   4.1 Executing the following instructions and uncompress the package.    
+            # tar -zxvf advad5593r.tar.gz
+            # cd advad5593r
+       
+   4.2 Driver
+
+      STEP1. Go to the driver directory
+            # cd drivers
+       
+      STEP2. Install driver
+            # make 
+	    # make install
+            # cd ..
+
+      STEP3. Install Service
+            # cp ad5593r.service /etc/systemd/system/
+            # systemctl enable ad5593r.service
+ 
+      STEP4. Reboot the system, AIO driver will start automatically 
+
+   4.3 Example
+	
+       Please go to the example directory and refer to the README file.
+
+   4.4 Setting operation modes.
+
+       Mode or function of all channels(channel0 ~ channel7) are currently supported 
+       the following modes:
+        - CH_MODE_UNUSED (the pin is unused)
+        - CH_MODE_ADC (the pin is ADC input)
+        - CH_MODE_DAC (the pin is DAC output)
+        - CH_MODE_DAC_AND_ADC (the pin is DAC output but can be monitored by an ADC,
+          since there is no disadvantage this this should be considered as the preferred DAC mode)
+        - CH_MODE_GPIO (the pin is registered with GPIOLIB)
+
+       If you want to add configuration to system boot:
+       Step1 >> Edit file /etc/default/grub .
+       modify
+	   GRUB_CMDLINE_LINUX_DEFAULT="quiet splash overlayroot=disabled intel_idle.max_cstate=1 net.ifnames=0 ad5593r.ch_mode=88888888"
+
+       Parameter "88001233" means that:
+	   channel[0] and channel[1] works in CH_MODE_DAC_AND_ADC mode
+	   channel[2] works in CH_MODE_DAC mode
+	   channel[3] works in CH_MODE_ADC mode
+	   channel[4] and channel[5] works in CH_MODE_UNUSED mode
+	   channel[6] and channel[7] works in CH_MODE_GPIO mode
+
+       Step2 >> update grub file.
+	   sudo update-grub
+	   sync
+
+	   Step3 >> reboot and restart ad5593r driver.
+	   reboot
+	   ##modprobe ad5593r
+
+       Also, you can choose to set config dynamically when the driver is loaded:
+       modprobe ad5593r ch_mode="88001233"
+
+       The driver use channel mode by default setting from ACPI table.
+
+-----------------------------------------------------------------------------
+5. Limitation
+   This driver can only work in version 4.10 and above.
+
+

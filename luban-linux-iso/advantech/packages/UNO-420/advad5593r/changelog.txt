@@ -1,0 +1,11 @@
+ChangeLog of Advantech AD5593R IIO DAC/ADC driver for x86 Linux
+
+Version 1.0.2 by William.Sung
+	Re-modify the ad5593r driver from the original codes from Linux main
+	steam. Following the standard driver probe way to probe up the driver.
+
+Version 1.00
+    Date 03/26/2019
+    create by Ji.Xu
+    ad5593r			version: V1.00
+

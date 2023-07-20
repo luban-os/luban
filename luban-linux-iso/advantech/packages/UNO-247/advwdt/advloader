@@ -1,0 +1,17 @@
+#!/bin/bash 
+#
+## Auto-loader for the Advantech watchdog driver.
+#
+
+DRIVERDIR=$(cd `dirname $0`; pwd)
+
+if [ "x`cat /proc/modules |grep advwdt6116d`" != "x" ]; then
+	rmmod advwdt6116d
+fi
+
+insmod ${DRIVERDIR}/driver/NCT6116D/advwdt6116d.ko
+
+rm -f /dev/watchdog
+if [ $(cat /proc/devices |awk '$2=="advwdt6116d" {print $1}') ]; then
+	mknod /dev/watchdog c $(cat /proc/devices |awk '$2=="advwdt6116d" {print $1}') 0
+fi

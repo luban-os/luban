@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<comps>
+    <configitem>
+        <id>app-auto-run</id>
+        <default>autologin</default>
+    </configitem>
+    <configitem>
+        <id>passwd</id>
+        <default>advantech</default>
+    </configitem>
+    <configitem>
+        <id>hostname</id>
+        <default>localhost</default>
+    </configitem>
+    <configitem>
+        <id>timezone</id>
+        <default>Asia/Shanghai</default>
+    </configitem>
+    <configitem>
+        <id>UTC</id>
+        <default></default>
+    </configitem>
+    <pkgclass>
+        <name>Desktop-system</name>
+        <pkglists>
+            <pkgid>qt-x11</pkgid>
+        </pkglists>
+    </pkgclass>
+	<storageclass device="" mode="cust">
+		<part size="100" fstype="vfat" mountpoint="/boot/efi" type="primary"/>
+		<part size="5000" fstype="ext4" mountpoint="/media/recovery" type="primary"/>
+		<part size="0" fstype="ext4" mountpoint="/" type="primary"/>
+    </storageclass>
+</comps>

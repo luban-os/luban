@@ -1,0 +1,59 @@
+#!/bin/bash
+PRODUCT_NAME=`Adspname -p | awk -F "-" '{print $1 $2}'`
+export TAGLINK_PATH="/home/sysuser"
+export LD_LIBRARY_PATH="/home/sysuser/lib:/opt/jdk1.9.0_172/jre/lib/i386/client:/opt/jdk1.8.0_172/jre/lib/i386"
+if [ ! -f "/etc/ifplugd/start_ifplugd.sh" ]; then
+	for netname in `ifplugstatus | cut -d \: -f 1`
+	do 
+		if [ "$netname" != 'lo' ]; then
+		 	#echo $netname
+			echo ifplugd -d 2 -I -p -i  $netname -r /etc/ifplugd/if.sh >> /etc/ifplugd/start_ifplugd.sh 
+		fi
+		chmod +x /etc/ifplugd/start_ifplugd.sh
+	done
+fi
+
+
+if [ -d /usr/src/advantech ]
+then
+	cd /usr/src/advantech
+	for x in $(ls)
+	do
+	        if [ -d "$x" ]; then
+		    cd $x
+		    if [ -e advloader ]
+		    then
+			./advloader > /dev/null 2>&1
+		    fi
+		    cd ..
+		fi
+	done
+fi
+if [ -x /home/sysuser/bin/AdvProgramMgr ] || [ -x /home/sysuser/bin/AdvAgentMain ]; then
+	if [ "${PRODUCT_NAME}"x = "UNO2271G"x ]; then
+		ln -s /dev/ttyUSB0 /dev/ttyAP0
+		ln -s /dev/ttyUSB1 /dev/ttyAP1
+		ln -s /dev/ttyS2 /dev/ttyAP2
+		ln -s /dev/ttyS3 /dev/ttyAP3
+	else
+		ln -s /dev/ttyS0 /dev/ttyAP0
+		ln -s /dev/ttyS1 /dev/ttyAP1
+		ln -s /dev/ttyS2 /dev/ttyAP2
+		ln -s /dev/ttyS3 /dev/ttyAP3
+	fi
+
+	chown -h root:dialout /dev/ttyAP0
+	chown -h root:dialout /dev/ttyAP1
+	chown -h root:dialout /dev/ttyAP2
+	chown -h root:dialout /dev/ttyAP3
+fi
+
+if [ -x /home/sysuser/bin/AdvProgramMgr ]; then
+	su -lp root -c '/home/sysuser/bin/AdvProgramMgr -d'
+fi
+
+chmod 777 /dev/watchdog
+chmod 777 /dev/advled
+chmod 777 /dev/advrelay
+chmod 777 /dev/daq0
+chmod 777 /dev/daq255
