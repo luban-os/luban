@@ -27,7 +27,8 @@ modify_40_custom()
 {
     PART=""
     RAID_DEV=`dmraid -s | grep name | awk '{print $NF}'`
-    OldUUID=`cat /etc/grub.d/40_custom | grep 'ahci0' | awk -F ' ' '{print $NF}'`
+    #OldUUID=`cat /etc/grub.d/40_custom | grep 'ahci0' | awk -F ' ' '{print $NF}'`
+	OldUUID=`cat /etc/grub.d/40_custom | grep 'uuid=' | awk -F '=' '{print $4}' | awk -F ' ' '{print $1}'`
 
     if [ "${RAID_DEV}"x = x ]; then
         PART=`df | awk '{if($6=="/media/recovery"&&$1~/dev/&&$1!~/dev\/mapper/) print $1}'`
@@ -69,9 +70,9 @@ sync
 grub_install()
 {
 	if [ -d /sys/firmware/efi ]; then
-        grub-install --force --target=x86_64-efi $DEV 
+        grub2-install --force --target=x86_64-efi --efi-directory=/boot/efi --boot-directory=/boot/efi/EFI --bootloader-id=openEuler
 	else
-        grub-install --force --target=i386-pc --boot-directory=/media/recovery/boot/ $DEV 
+        grub2-install --force --target=i386-pc --boot-directory=/media/recovery/boot/ $DEV 
 	fi
     	sync
     	sleep 2
@@ -83,11 +84,11 @@ grub_install()
 cfg_grub()
 {
 	if [ -d /sys/firmware/efi ]; then
-		rm -rf /boot/grub/grub.cfg
-        grub-mkconfig -o /boot/grub/grub.cfg
+		rm -rf /boot/efi/EFI/openEuler/grub.cfg
+        grub2-mkconfig -o /boot/efi/EFI/openEuler/grub.cfg
 	else
-		rm -rf /media/recovery/boot/grub/grub.cfg
-        grub-mkconfig -o /media/recovery/boot/grub/grub.cfg
+		rm -rf /media/recovery/boot/grub2/grub.cfg
+        grub2-mkconfig -o /media/recovery/boot/grub2/grub.cfg
 	fi
         sync
         sync
@@ -127,7 +128,11 @@ fix_fstab()
     PART=`df | awk '{if($6=="/boot"&&$1~/dev/&&$1!~/dev\/mapper/) print $1}'`
     [ $PART ] && echo -e "UUID=`blkid -s UUID -o value $PART`\t/boot\t`blkid -s TYPE -o value $PART`\tdefaults\t0\t2" >> /etc/fstab
 
-    #/medial/recovery
+    #/boot/efi
+    PART=`df | awk '{if($6=="/boot/efi"&&$1~/dev/&&$1!~/dev\/mapper/) print $1}'`
+    [ $PART ] && echo -e "UUID=`blkid -s UUID -o value $PART`\t/boot/efi\t`blkid -s TYPE -o value $PART`\tumask=0077,shortname=winnt\t0\t2" >> /etc/fstab
+
+    #/media/recovery
     if [ "${RAID_DEV}"x = x ]; then
         PART=`df | awk '{if($6=="/media/recovery"&&$1~/dev/&&$1!~/dev\/mapper/) print $1}'`
     else

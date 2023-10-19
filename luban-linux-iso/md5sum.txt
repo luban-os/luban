@@ -181,7 +181,7 @@ d054e0d84af9bf36fcd5dc297f6395d1  ./isolinux/se.tr
 4e2f67968f36ea5c69f9c5fe84f9e8d9  ./isolinux/ln.tr
 5edbcc871eee4163167e55de4df2913b  ./isolinux/gl.hlp
 ec6d07ac90429dde363118ca438006e5  ./isolinux/bg.tr
-ef88a320d616e8be8e5691fc210c8ac7  ./isolinux/isolinux.bin
+4dda30155dd74b19119a74c5685c4198  ./isolinux/isolinux.bin
 bb972ba14c944d4123e72726d742cfeb  ./isolinux/ja.tr
 40f7f6fe67f21f800869166546ecd874  ./isolinux/f3.txt
 120f5419a6d0b26db6554d27e9f805a1  ./isolinux/ary.tr
@@ -280,9 +280,12 @@ b6531adbac5abcdffa32f3a5c1aedea0  ./isolinux/ja.hlp
 1766fdd5a12d41cbf188c87f3c0e0c1d  ./casper/filesystem.manifest-desktop
 1766fdd5a12d41cbf188c87f3c0e0c1d  ./casper/filesystem.manifest
 8cb6886a9544260c3599f7fc3336dd33  ./casper/vmlinuz
+531f8c84b7c93627e883f5ec04a58695  ./casper/filesystem-base/readme.txt
+eb842e729ede4de284d7e9c0e9661ecd  ./casper/filesystem-base/filesystem-openEuler.squashfs-00
 f240814be4d3b07624d902a15c92b86c  ./casper/filesystem-base/filesystem.squashfs-00
+08ff136ee1c19c72f16f713feaa23f96  ./casper/filesystem-base/filesystem-openEuler.squashfs-01
 a4dcd254bfb265554a3004d3ad433f41  ./casper/filesystem-base/filesystem.squashfs-01
-6dad35eb0993a697a2eecb6b5ac1f13f  ./casper/filesystem.squashfs
+241b599728d1f63471d8360afadf1fc4  ./casper/filesystem.squashfs
 4fa9d12fa216bc62b0580015d282ee88  ./casper/filesystem.size
 e0b7ebce7ee3f6492008ffbec9befb46  ./casper/vmlinuz.bak
 f0fc0ff4ad6055c3a6ba5524de414fcd  ./install/mt86plus
@@ -336,10 +339,10 @@ a2ba0ab4dcf4d812a77cb25c048f3c0f  ./advantech/packages/UNO-247/advwdt/README
 99073363cc6fc253c7052a67886deb31  ./advantech/packages/UNO-247/advwdt/examples/Makefile
 138aec5f6a4b8da491dc3499f31b100d  ./advantech/packages/UNO-247/advwdt/driver/NCT6116D/advwdt6116d.ko
 0d60c994d493fc0d284f9ff6c4ee52c8  ./advantech/script/env.file
-df197f68bae6b66a1b18c7d7f1e4c1e9  ./advantech/script/adv-system-setup-inside.sh
-43dc9f23444e220f4295d17478bbf683  ./advantech/script/post_factory_recovery.sh
+a5a4bf6788759ee0a317920fbe84d828  ./advantech/script/adv-system-setup-inside.sh
+afde9c38dbb3918784182d709cabee18  ./advantech/script/post_factory_recovery.sh
 1d4af93c17a2dc41fc66ac1f7930f02c  ./advantech/script/recovery_image.sh
-ab17428a25b59c72e3d9c22fec1a7ce8  ./advantech/script/factory_recovery.sh
+d0d132fb2f4bf26f5165c71cfdf834f0  ./advantech/script/factory_recovery.sh
 5b57533df28638f33cf2c27fba0316e3  ./advantech/profile/TPC-2181WP-533AE/obex-dbus.conf
 3832e4c715af3a5922066464a4347429  ./advantech/profile/ECU-4784/rc.local
 85cd1a1014f2c7e208aba95d9c8ce869  ./advantech/conf/autoinstall.xml
@@ -353,8 +356,8 @@ ab17428a25b59c72e3d9c22fec1a7ce8  ./advantech/script/factory_recovery.sh
 4631f96bedb5bd9ae5e5bb4877ed8499  ./advantech/conf/logo_16bit.png
 a646ec23de5e3adf9836e628cb703bde  ./advantech/conf/advupdate.txt.example
 28646807b462d967e1d15233e66f70ae  ./advantech/images/appupdatedemo.img
+d111a5876874fa29d0e456bf677035be  ./advantech/images/advlinux-2.0.6-2.img
 ccaf201b59bb9e6b0b8bde59b06efefb  ./advantech/images/unsquashfs-img.sh
-b0b3e44babdbc040f284807976a5b110  ./advantech/images/advlinux-1.0.0.img
 a80a1d12c38096f6b0616506b7ddae09  ./advantech/images/mksquashfs-img.sh
 0143c4504c437233ba3d87623b5951da  ./advantech/images/chroot_newrootfs.sh
 69e7247c60fe49f00d0c26b40cb8244c  ./advantech/sbin/recovery_installer
@@ -614,4 +617,5 @@ a805331d3a88827e3624aee8ad60f135  ./boot/grub/x86_64-efi/gcry_sha1.mod
 f948fcc546952e0fadd42678fbf4a35c  ./boot/grub/font.pf2
 e0b05c1dcd30d0fee5673c716e16c8c9  ./boot/grub/efi.img
 6d1b964f6a85128ea1597e88262cba14  ./boot/grub/loopback.cfg
+9197c8fc5200a15df5d4f07c71c016e7  ./md5sum.txt
 70ebbfdad595016cd96526cd866700a8  ./README.diskdefines

@@ -29,9 +29,10 @@ mount --bind /sys  /media/${ROOTFS_DEV}/sys
 
 copy_grub_cfg()
 {
-	cp -xarf /etc/grub.d/* /media/${ROOTFS_DEV}/etc/grub.d/
-	cp -xarf /etc/default/grub /media/${ROOTFS_DEV}/etc/default/
-	rm -rf /media/${ROOTFS_DEV}/etc/grub.d/20_memtest86+
+	cp -rf /etc/grub.d/40_custom /media/${ROOTFS_DEV}/etc/grub.d/
+	#cp -xarf /etc/grub.d/* /media/${ROOTFS_DEV}/etc/grub.d/
+	#cp -xarf /etc/default/grub /media/${ROOTFS_DEV}/etc/default/
+	#rm -rf /media/${ROOTFS_DEV}/etc/grub.d/20_memtest86+
 	rm -rf /media/${ROOTFS_DEV}/etc/grub.d/30_uefi-firmware
 	sync
 	#rm -rf /media/${ROOTFS_DEV}/etc/grub.d/30_os-prober
