@@ -40,7 +40,8 @@ modify_40_custom()
     PART=""
     RAID_DEV=`dmraid -s | grep name | awk '{print $NF}'`
     #OldUUID=`cat /etc/grub.d/40_custom | grep 'ahci0' | awk -F ' ' '{print $NF}'`
-	OldUUID=`cat /etc/grub.d/40_custom | grep 'uuid=' | awk -F '=' '{print $4}' | awk -F ' ' '{print $1}'`
+	#OldUUID=`cat /etc/grub.d/40_custom | grep 'uuid=' | awk -F '=' '{print $4}' | awk -F ' ' '{print $1}'`
+	OldUUID=`cat /etc/grub.d/40_custom | tail -n 3| grep 'uuid=' | awk -F '=' '{print $4}' | awk -F ' ' '{print $1}'`
 
     if [ "${RAID_DEV}"x = x ]; then
         PART=`df | awk '{if($6=="/media/recovery"&&$1~/dev/&&$1!~/dev\/mapper/) print $1}'`

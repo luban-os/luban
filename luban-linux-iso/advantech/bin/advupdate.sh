@@ -34,7 +34,7 @@ then
 	INSTALLDISK="dm-2"
 fi
 
-configfile="advupdate.txt"
+configfile="advupdate.txt.example"
 rebootfile="rebootFlag"
 
 echo_msg()
@@ -173,7 +173,7 @@ recoveryfs () {
 		echo_msg "${fsfile} not update!!!"
 	fi
 
-	mv /media/${recoverdev}/advupdate.txt /media/${recoverdev}/advupdate.bak
+	#mv /media/${recoverdev}/advupdate.txt /media/${recoverdev}/advupdate.bak
 	sync;sync;sleep 1
 }
 
