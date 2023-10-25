@@ -1,7 +1,7 @@
 #!/bin/bash -x
 
 ISO_path=../luban-linux-iso
-ISO_name=../openEuler_install_v2.0.7.iso
+ISO_name=../openEuler_install_v2.0.8.iso
 
 echo "delete old LiveCD iso..."
 rm -rf ${ISO_name}

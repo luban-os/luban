@@ -34,7 +34,7 @@ then
 	INSTALLDISK="dm-2"
 fi
 
-configfile="advupdate.txt.example"
+configfile="advupdate.txt"
 rebootfile="rebootFlag"
 
 echo_msg()
