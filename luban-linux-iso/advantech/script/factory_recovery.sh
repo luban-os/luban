@@ -29,6 +29,7 @@ mount --bind /sys  /media/${ROOTFS_DEV}/sys
 
 copy_grub_cfg()
 {
+	cp -rf /etc/grub.d/00_header /media/${ROOTFS_DEV}/etc/grub.d/
 	cp -rf /etc/grub.d/10_linux /media/${ROOTFS_DEV}/etc/grub.d/	
 	cp -rf /etc/grub.d/40_custom /media/${ROOTFS_DEV}/etc/grub.d/
 	#cp -xarf /etc/grub.d/* /media/${ROOTFS_DEV}/etc/grub.d/
