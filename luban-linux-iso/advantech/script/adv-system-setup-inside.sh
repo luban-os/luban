@@ -64,7 +64,10 @@ sed -i '175a if set_background_image "${WALLPAPER=/usr/share/images/desktop-base
 #modify grub
 modify_grub()
 {
-sed -i '11d' /etc/default/grub
+#ubuntu
+#sed -i '11d' /etc/default/grub
+#xubuntu
+sed -i '12d' /etc/default/grub
    
 if [ $(echo ${SYSTEM_MODE} |grep "X-window-system") ] || [ $(echo ${SYSTEM_MODE} |grep "Desktop-system") ] || [ $(echo ${SYSTEM_MODE} |grep "desktop") ]; then
     sed -i '10a GRUB_CMDLINE_LINUX_DEFAULT="quiet splash overlayroot=disabled '$grubReq'"' /etc/default/grub
