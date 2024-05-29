@@ -83,9 +83,9 @@ sync
 grub_install()
 {
 	if [ -d /sys/firmware/efi ]; then
-        grub2-install --force --target=x86_64-efi --efi-directory=/boot/efi --boot-directory=/boot/efi/EFI --bootloader-id=openEuler
+        grub-install --force -d /usr/lib/grub/x86_64-efi/ --target=x86_64-efi --efi-directory=/boot/efi --boot-directory=/boot --bootloader-id=ubuntu
 	else
-        grub2-install --force --target=i386-pc --boot-directory=/media/recovery/boot/ $DEV
+        grub-install --force --target=i386-pc --boot-directory=/media/recovery/boot/ $DEV
 	fi
     	sync
     	sleep 2
@@ -97,11 +97,13 @@ grub_install()
 cfg_grub()
 {
 	if [ -d /sys/firmware/efi ]; then
-		rm -rf /boot/efi/EFI/openEuler/grub.cfg
-        grub2-mkconfig -o /boot/efi/EFI/openEuler/grub.cfg
+		#rm -rf /boot/efi/EFI/openEuler/grub.cfg
+        #grub-mkconfig -o /boot/efi/EFI/openEuler/grub.cfg
+		rm -rf /boot/grub/grub.cfg
+		grub-mkconfig -o /boot/grub/grub.cfg
 	else
-		rm -rf /media/recovery/boot/grub2/grub.cfg
-        grub2-mkconfig -o /media/recovery/boot/grub2/grub.cfg
+		rm -rf /media/recovery/boot/grub/grub.cfg
+        grub-mkconfig -o /media/recovery/boot/grub/grub.cfg
 	fi
         sync
         sync
